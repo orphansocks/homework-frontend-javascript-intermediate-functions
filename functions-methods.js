@@ -44,15 +44,15 @@ console.log(typeOfEmail("novi.nlaapjesk@outlook.com"));
 console.log(typeOfEmail("a.wiersma@outlook.com"));
 
 
-
-
 /* Opdracht  3 */
 // Schrijf een functie genaamd checkEmailValidity, die een emailadres verwacht en checkt of het emailadres valide is.
 // De functie returned true of false, afhankelijk van de uitkomst.
+
 // Een emailadres is valide wanneer:
 // * Er een @ in voorkomt
 // * Er géén , in voorkomt
 // * Er géén . in voorkomt als allerlaatste karakter (dus hotmail.com is valide, net als outlook.nl, maar outlooknl. niet)
+
 // ---- Verwachte uitkomsten:
 // checkEmailValidity("n.eeken@novi.nl") geeft true - want @ en punt op de juiste plek
 // checkEmailValidity("tessmellink@novi.nl") geeft true - want @ en punt op de juiste plek
@@ -60,19 +60,24 @@ console.log(typeOfEmail("a.wiersma@outlook.com"));
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
 
+
+
 function checkEmailValidity(emailAddress) {
     const checkAt = emailAddress.includes("@");
-
     const checkComma = emailAddress.includes(",");
 
     const lastIndex = emailAddress.length;
     const lastIndexOfPoint = emailAddress.lastIndexOf(".");
 
 
-    if (checkAt === true &&  checkComma === false && lastIndex !== lastIndexOfPoint) {
-        return "true"
-    } else {
-        return "false"
+    if (checkAt === true) {
+        if (checkComma === false) {
+            if (lastIndex !== lastIndexOfPoint) {
+                return "true"
+            } else {
+                console.log("false");
+            }
+        }
     }
 }
 
