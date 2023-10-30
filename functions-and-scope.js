@@ -2,7 +2,6 @@
 // maar ook een manier moeten vinden om hetgeen dat je verzamelt ergens te bundelen. Op deze manier zul je ontdekken hoe je omgaat met scope. Pak vooral het hoofdstuk op EdHub over for-loops er nog eens bij!
 // Tip: je mag hier geen ingebouwde object methoden gebruiken, dus daar hoef je niet naar te kijken.
 
-const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 /* Opdracht  1: Cum Laude */
 
@@ -14,6 +13,28 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan bijhouden?
 // Log het antwoord in de terminal.
 
+const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
+
+// noteer cumlaude per cijfer
+
+for (let i = 0; i < grades.length; i++) {
+    if (grades[i] >= 8) {
+        const cumLaude = 1;
+        console.log(cumLaude)
+    } else {
+        const cumLaude = 0;
+        console.log(cumLaude)
+    }
+}
+
+
+
+
+// bereken het totaal van de cumlaudes
+
+
+
+
 // ---- Verwachte uitkomst: 6
 
 
@@ -21,6 +42,25 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // Schrijf een functie genaamd cumLaude, die een array van cijfers verwacht (zoals grades) en het aantal Cum laude studenten teruggeeft. Gebruik hiervoor jouw antwoord van 1a.
 // Zorg ervoor dat jouw functie ook werkt als we een andere array met eindcijfers willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
 // Log het antwoord in de terminal.
+
+function cumLaude(listOfGrades){
+
+for (let i = 0; i < listOfGrades.length; i++) {
+    if (listOfGrades[i] >= 8) {
+        const cumLaude = 1;
+        return cumLaude
+    } else {
+        const cumLaude = 0;
+        return cumLaude
+    }
+}
+}
+
+console.log(cumLaude(grades));
+console.log(cumLaude([6, 4, 5]));
+console.log(cumLaude([8, 9, 4, 6, 10]));
+
+
 
 // ---- Verwachte uitkomsten:
 // cumLaude(grades) geeft 6
@@ -40,6 +80,24 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // * Hoe zorgt ik ervoor dat ik alle waardes uit de array kan langslopen, ook als de array wel 100 entries zou bevatten?
 // Log het antwoord in de terminal.
 
+
+console.log(grades);
+
+function averageGrade(listOfGrades) {
+
+for (let i = 0; i < listOfGrades.length; i++) {
+    const totalSumOfGrades = listOfGrades[i] += listOfGrades[i];
+    const average = totalSumOfGrades / listOfGrades.length;
+    return average;
+}
+
+}
+
+console.log(averageGrade(grades));
+console.log(averageGrade([6, 4, 5]));
+console.log(averageGrade([8, 9, 4, 6, 10]));
+
+
 // ---- Verwachte uitkomst: 6.642857142857143
 
 
@@ -58,13 +116,15 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
-
-
+let roundedResult = Math.round(averageGrade(grades) * 100) / 100
+console.log(roundedResult);
+console.log("ergens doe ik iets fout, maar ga maar gewoon door ;))");
 
 /* Bonusopdracht: hoogste cijfer */
 
 /* 3a: Script schrijven  */
-// Schrijf een script die op basis van de grades array (hierboven) checkt wat het hoogst behaalde cijfer is. Je mag hier geen bestaande methoden voor gebruiken. Schrijf de stapjes eerst uit en vraag jezelf de volgende dingen af:
+// Schrijf een script die op basis van de grades array (hierboven) checkt wat het hoogst behaalde cijfer is. Je mag hier geen bestaande methoden voor gebruiken.
+// Schrijf de stapjes eerst uit en vraag jezelf de volgende dingen af:
 // * Hoe kan ik iedere waarde van de array langsgaan?
 // * Op welke conditie moet ik checken?
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan opslaan?
@@ -72,6 +132,21 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 // ---- Verwachte uitkomst: 9
 
+console.log(grades);
+
+function findHighestGrade(listOfGrades) {
+    return highestGrade
+
+    for (let i = 0; i < ; i++) {
+        if
+
+
+    }
+}
+
+
+let highestGrade = Math.max(averageGrade(grades);
+console.log(highestGrade);
 
 /* 3b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd highestGrade, die een array van cijfers verwacht (zoals grades) en het hoogste cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 3a.
